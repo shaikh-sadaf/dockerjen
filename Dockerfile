@@ -1,4 +1,4 @@
-FROM ubuntu 
+FROM centos:$VERSION
 RUN apt-get update  -y
 RUN apt-get  install –y apache2 
 RUN apt-get install –y apache2-utils 
