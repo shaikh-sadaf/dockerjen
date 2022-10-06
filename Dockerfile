@@ -1,6 +1,4 @@
-ARG VERSION=latest
 FROM centos:${VERSION}
-ARG VERSION
 RUN echo $VERSION > image_version
 RUN cd /etc/yum.repos.d/
 RUN sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-*
