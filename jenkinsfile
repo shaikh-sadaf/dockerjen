@@ -1,0 +1,31 @@
+pipeline{
+    agent any
+    stages{
+        stage('git checkout')
+        {
+            steps{
+              checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/shaikh-sadaf/dockerjen.git']]])
+            }
+        }
+        stage('parameter setup')
+        {
+            steps{
+                script{
+                   properties([
+                       parameters([
+                           string(
+                               defaultValue: 'latest', 
+                               name: 'VERSION')])])
+                               
+                }
+            }
+        }
+        stage('build docker image'){
+            steps{
+                script{
+                    sh 'docker build -t my-apache2 .'
+                }
+            }
+        }
+    }
+}
