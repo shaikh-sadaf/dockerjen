@@ -1,5 +1,6 @@
 ARG PACKAGE=httpd
 FROM centos
+ARG PACKAGE
 RUN echo $VERSION > image_version
 RUN cd /etc/yum.repos.d/
 RUN sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-*
