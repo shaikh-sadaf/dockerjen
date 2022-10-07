@@ -1,3 +1,4 @@
+ARG PACKAGE=httpd
 FROM centos
 RUN echo $VERSION > image_version
 RUN cd /etc/yum.repos.d/
