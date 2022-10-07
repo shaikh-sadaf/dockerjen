@@ -13,10 +13,7 @@ pipeline{
                 script{
                    properties([
                        parameters([
-                           string(
-                               defaultValue: 'latest', 
-                               name: 'VERSION')
-                            string( 
+                           string( 
                             defaultvalue: 'httpd',
                             name: 'PACKAGE')])])
                                
