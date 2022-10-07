@@ -1,4 +1,3 @@
-ARG PACKAGE=httpd
 FROM centos
 ARG PACKAGE
 RUN echo $VERSION > image_version
