@@ -21,11 +21,14 @@ pipeline{
             }
         }
           stage('Build in docker container') {
+          steps{
+          
             agent {
                 dockerfile {
                     additionalBuildArgs  '--build-arg version="$package"'
                 }
             }
+         }
          }
         stage('build docker image'){
             steps{
