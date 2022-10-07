@@ -15,7 +15,10 @@ pipeline{
                        parameters([
                            string(
                                defaultValue: 'latest', 
-                               name: 'VERSION')])])
+                               name: 'VERSION')
+                            string( 
+                            defaultvalue: 'httpd',
+                            name: 'PACKAGE')])])
                                
                 }
             }
