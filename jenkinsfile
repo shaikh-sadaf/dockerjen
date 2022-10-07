@@ -20,12 +20,21 @@ pipeline{
                 }
             }
         }
+          stage('Build in docker container') {
+            agent {
+                dockerfile {
+                    additionalBuildArgs  '--build-arg version="$package"'
+                }
+            }
+         }
         stage('build docker image'){
             steps{
                 script{
+               
                     sh 'docker build -t my-apache2 .'
                 }
             }
         }
+       
     }
 }
