@@ -15,7 +15,8 @@ pipeline{
                        parameters([
                            string( 
                             defaultvalue: 'httpd',
-                            name: 'package')])])
+                            name: 'package')
+                            RUN if [ "${package}" = "httpd" ] ; then  RUN yum install -y ${package}; else RUN echo "Please Mention Correct Package" && exit; fi ])])
                                
                 }
             }
