@@ -16,7 +16,7 @@ pipeline{
                            string( 
                             defaultvalue: 'httpd',
                             name: 'package')
-                            RUN if [ "${package}" = "httpd" ] ; then  RUN yum install -y ${package}; else RUN echo "Please Mention Correct Package" && exit; fi ])])
+                             ])])
                                
                 }
             }
@@ -31,6 +31,17 @@ pipeline{
             }
          }
          }
+         stage('conditional'){
+                         steps{
+                               if (params.package = "httpd") ; then  
+                               sh 'yum install -y ${package}'
+                               }
+                               else 
+                               {
+                                 echo ' "Please Mention Correct Package" && exit '
+                              }
+          }
+         if (params.package) = "httpd" ; then  RUN yum install -y ${package}; else RUN echo "Please Mention Correct Package" && exit; fi
         stage('build docker image'){
             steps{
                 script{
