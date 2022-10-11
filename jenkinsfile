@@ -35,7 +35,7 @@ pipeline{
                          steps{
                          script{
 
-                               if ((params.package) = "httpd") {
+                               if ((params.package) == httpd) {
                                
                                sh 'yum install -y ${package}'
                                }
@@ -46,7 +46,7 @@ pipeline{
                             } 
                      }
           }
-         if (params.package) = "httpd" ; then  RUN yum install -y ${package}; else RUN echo "Please Mention Correct Package" && exit; fi
+   
         stage('build docker image'){
             steps{
                 script{
