@@ -37,7 +37,7 @@ pipeline{
 
                                if ((params.package) == "httpd") {
                                
-                               sh 'yum install -y {$package}'
+                               sh 'apt install -y $package'
                                }
                                else 
                                {
