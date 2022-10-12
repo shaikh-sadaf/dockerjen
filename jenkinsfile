@@ -33,7 +33,7 @@ pipeline{
          }
          stage('conditional'){
                          steps{
-                         script{
+                        script{
 
                                if ((params.package) == "httpd") {
                                
@@ -42,10 +42,13 @@ pipeline{
                                else 
                                {
                                  echo ' "Please Mention Correct Package" && exit '
-                              }
+                               }
                             } 
                      }
           }
+          
+
+
    
         stage('build docker image'){
             steps{
