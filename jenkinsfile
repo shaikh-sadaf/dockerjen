@@ -37,11 +37,11 @@ pipeline{
 
                                if ((params.package) == "httpd") {
                                
-                               echo 'continue the pipeline'
+                               sh 'continue the pipeline'
                                }
                                else 
                                {
-                                 echo ' "Please Mention Correct Package" && exit '
+                                 sh ' "Please Mention Correct Package" && exit '
                                }
                             } 
                      }
