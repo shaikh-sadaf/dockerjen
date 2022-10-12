@@ -37,11 +37,11 @@ pipeline{
 
                                if ((params.package) == "httpd") {
                                
-                               sh 'continue the pipeline'
+                               sh 'yum install -y {$package}'
                                }
                                else 
                                {
-                                 sh ' "Please Mention Correct Package" && exit '
+                                 echo ' "Please Mention Correct Package" && exit '
                                }
                             } 
                      }
