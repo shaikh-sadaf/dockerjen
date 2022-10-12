@@ -35,9 +35,9 @@ pipeline{
                          steps{
                          script{
 
-                               if ((params.package) == httpd) {
+                               if ((params.package) == "httpd") {
                                
-                               echo 'contnue the pipeline'
+                               echo 'continue the pipeline'
                                }
                                else 
                                {
