@@ -58,7 +58,7 @@ pipeline{
                 script{
                
                     //sh 'docker build -t my-apache2 .'--build-arg param1=$param1 '
-                    sh 'docker.build('my-apache2', '--build-arg package=$package.')'
+                    sh 'docker.build -t my-apache2 --build-arg package=$package .'
                 }
             }
         }
