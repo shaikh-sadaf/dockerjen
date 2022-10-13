@@ -1,5 +1,5 @@
 FROM centos
-ENV package=$package
+ARG package=$package
 RUN echo $VERSION > image_version
 RUN echo "${package}"
 RUN cd /etc/yum.repos.d/
