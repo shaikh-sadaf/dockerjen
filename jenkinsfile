@@ -56,6 +56,7 @@ pipeline{
         stage('build docker image'){
             steps{
                 script{
+                     sh "echo Package: $params.package"
                      docker.build("my-apache2","--build-arg package=$params.package --no-cache .")
                      }
             }
