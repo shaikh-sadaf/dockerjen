@@ -38,7 +38,7 @@ pipeline{
                                if ((params.package) == "httpd") {
                                
                                //sh 'sudo apt-get install -y $package'
-                               echo "Package: $package"
+                               echo '"Package:" $package'
                                }
                                else 
                                {
