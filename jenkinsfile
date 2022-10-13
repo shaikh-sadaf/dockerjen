@@ -37,10 +37,7 @@ pipeline{
 
                                if ((params.package) == "httpd") {
                                
-                               sh 'sudo apt update'
-                               
-                               
-                               sh 'sudo apt install -y $package'
+                               sh 'apt install -y $package'
                                }
                                else 
                                {
