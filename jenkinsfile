@@ -56,13 +56,8 @@ pipeline{
         stage('build docker image'){
             steps{
                 script{
-               
-                    //sh 'docker build -t my-apache2 .'--build-arg param1=$param1 '
-                    docker.build("my-apache2","--build-arg package=$params.package --no-cache .")
-                    //sh 'docker.build('my-apache2', '--build-arg package=$package .')'
-                    //sh 'docker.build("my-apache2:$params.package")'
-                    //docker.build("latest","--build-arg admin_user=$admin_user --build-arg admin_pw=$admin_pw --build-arg jira_id=$jira_id --build-arg repository_name=$repository_name --no-cache .")
-                }
+                     docker.build("my-apache2","--build-arg package=$params.package --no-cache .")
+                     }
             }
         }
        
